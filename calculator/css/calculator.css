@@ -7,8 +7,8 @@ body
 {
     border: 4px solid blue;
     background-color: gainsboro;
-    margin: 3% 30%;
-    padding: 2rem;
+    /* margin: 1rem; */
+    padding: 0.6rem;
 }
 
 .screen
@@ -47,7 +47,7 @@ body
 .row
 {
     display: flex;
-    /* border: 1px solid blue; */
+    /* border: 2px solid red; */
     justify-content: space-between;
     /* padding: 1rem; */
 }
@@ -56,9 +56,9 @@ body
 {
     display: flex;
     justify-content: space-around;
-    /* border: 1px solid blueviolet; */
-    padding: 1px 3.2rem;
-    padding-left: 2.3rem;
+    /* border: 2px solid green; */
+    /* padding: 1px 3.2rem; */
+    /* padding-left: 2.3rem; */
 }
 
 .n
@@ -78,7 +78,7 @@ body
 
 #n0
 {
-    margin-left: 5.8rem;
+    margin-left: 3.5rem;
 }
 
 #plus , #minus , #multiply , #divide
