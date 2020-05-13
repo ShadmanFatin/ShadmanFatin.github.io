@@ -12,6 +12,14 @@ body
     margin: 1rem 1rem;
 }
 
+@media only screen and (min-width: 768px) 
+{
+    .wrapper 
+    {
+        margin: 1rem 22rem;
+    }
+}
+
 .screen
 {
     border: 4px solid black;
