@@ -12,7 +12,8 @@ body
     margin: 1rem 1rem;
 }
 
-@media only screen and (min-width: 768px) 
+/* if it is opened in pc then calculator width will be reduced (here .wrapper will be overrided if screen size is altlest 600px or more) */
+@media only screen and (min-width: 600px)
 {
     .wrapper 
     {
