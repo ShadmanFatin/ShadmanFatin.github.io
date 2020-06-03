@@ -67,7 +67,7 @@ function down()
 const whiteFace = document.querySelector(".whiteFace");
 let timer = 0;
 
-const interval = setInterval(init , 500);
+const interval = setInterval(init , 100);
 
 function init()
 {
