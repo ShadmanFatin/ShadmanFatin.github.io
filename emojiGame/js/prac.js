@@ -139,8 +139,8 @@ function go()
     if ( (wl == bl) && (wt==bt) ) 
     {
         clearInterval(interval);
-        blackFace.innerHTML = "♥";
-        whiteFace.innerHTML = "♥";
+        blackFace.innerHTML = "💙";
+        whiteFace.innerHTML = "🧡";
     }
 }
 
