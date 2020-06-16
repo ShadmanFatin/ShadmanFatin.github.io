@@ -1,0 +1,60 @@
+html 
+{
+      box-sizing: border-box;
+  }
+
+  *, *:before, *:after 
+  {
+      box-sizing: inherit;
+  }
+
+.overList
+{
+      overflow: scroll;
+}
+
+.list
+{
+      height: auto;
+      width: 180rem;
+      /* border: 1px solid red; */
+      display: flex;
+      flex-wrap: nowrap;
+}
+
+.smallImg
+{
+      height: auto;
+      width: 15rem;
+      /* border: 1px solid red; */
+      margin: 0.5rem 1rem;
+}
+
+.smallImg:focus , .smallImg:hover , .selectedImg
+{
+      outline: 2px solid red;
+      cursor: pointer;
+}
+
+.bigImg
+{
+      width: 50%;
+}
+
+.overBigImg
+{
+      /* border: 2px solid red; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+}
+
+body
+{
+      background-color: black;
+}
+
+header
+{
+      background-color: rgb(71, 71, 71);
+}
