@@ -41,28 +41,29 @@ function removeSelectedBorder()
 
 //********************************************************
 
-let runAgainAt = Date.now();
-let initialTime = Date.now();
-
-
 setTimeout
 (
-      function runOnce()
+      function startAnimationAfter()
       { 
             requestAnimationFrame(rafCounter); 
       }
-
+      
       , 
-
+      
       3000
-);
+      );
+      
+//**********************************************************
 
+      let runAgainAt = Date.now();
+      let initialTime = Date.now();
+      
 
-function rafCounter() 
-{
-      if (Date.now() > runAgainAt) 
+      function rafCounter() 
       {
-            //Start animation from here...
+            if (Date.now() > runAgainAt) 
+            {
+            // Start animation from here...
             let currentImgIndex = bigImg.dataset.index;
             let nextSmallImg = getNextSmallImg(currentImgIndex); 
 
@@ -73,11 +74,11 @@ function rafCounter()
             // Finish animation upto here...
 
 
-            runAgainAt = Date.now() + 2000;
+            runAgainAt = Date.now() + 3000;
       }
 
 
-      if (initialTime + 60*1000 <= Date.now() )
+      if (initialTime + 100*1000 <= Date.now() )
       {
             cancelAnimationFrame(rafCounter);
       }
