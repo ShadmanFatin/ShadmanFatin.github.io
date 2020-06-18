@@ -16,7 +16,7 @@ html
 .list
 {
       height: auto;
-      width: 180rem;
+      width: 200%;
       /* border: 1px solid red; */
       display: flex;
       flex-wrap: nowrap;
@@ -25,9 +25,9 @@ html
 .smallImg
 {
       height: auto;
-      width: 15rem;
+      width: 15%;
       /* border: 1px solid red; */
-      margin: 0.5rem 1rem;
+      margin: 0.2% 0.3%;
 }
 
 .smallImg:focus , .smallImg:hover , .selectedImg
@@ -38,7 +38,7 @@ html
 
 .bigImg
 {
-      width: 50%;
+      width: 51%;
 }
 
 .overBigImg
