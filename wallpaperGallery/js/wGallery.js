@@ -19,12 +19,9 @@ for (let i=0; i<=smallImgList.length-1; i++)
 {
       smallImgList[i].addEventListener
       (
-            "click" , function changeBigImg(event)
+            "click" , function(event)
             {
-                  removeSelectedBorder();
-                  bigImg.src = event.target.src;
-                  event.target.classList.add("selectedImg");
-                  bigImg.dataset.index=event.target.dataset.index; 
+                  changeBigImg(event.target);
             }
       )
 }
@@ -66,11 +63,7 @@ setTimeout
             // Start animation from here...
             let currentImgIndex = bigImg.dataset.index;
             let nextSmallImg = getNextSmallImg(currentImgIndex); 
-
-            removeSelectedBorder();
-            bigImg.src = nextSmallImg.src;
-            nextSmallImg.classList.add("selectedImg");
-            bigImg.dataset.index=nextSmallImg.dataset.index;
+            changeBigImg(nextSmallImg);
             // Finish animation upto here...
 
 
@@ -96,4 +89,12 @@ function getNextSmallImg(currentImgIndex)
       let nextImgIndex = parseInt(currentImgIndex)+1;
       if (nextImgIndex==16) nextImgIndex=0;
       return smallImgList[nextImgIndex];
+}
+
+function changeBigImg(smallImg)
+{
+      removeSelectedBorder();
+      bigImg.src = smallImg.src;
+      smallImg.classList.add("selectedImg");
+      bigImg.dataset.index=smallImg.dataset.index; 
 }

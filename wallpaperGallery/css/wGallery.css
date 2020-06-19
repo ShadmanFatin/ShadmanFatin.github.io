@@ -30,7 +30,7 @@ html
       margin: 0.2% 0.3%;
 }
 
-.smallImg:focus , .smallImg:hover , .selectedImg
+.smallImg:hover , .selectedImg
 {
       outline: 2px solid red;
       cursor: pointer;
