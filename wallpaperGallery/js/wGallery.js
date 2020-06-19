@@ -61,9 +61,7 @@ setTimeout
             if (Date.now() > runAgainAt) 
             {
             // Start animation from here...
-            let currentImgIndex = bigImg.dataset.index;
-            let nextSmallImg = getNextSmallImg(currentImgIndex); 
-            changeBigImg(nextSmallImg);
+            goToNextImg();
             // Finish animation upto here...
 
 
@@ -88,6 +86,7 @@ function getNextSmallImg(currentImgIndex)
 {     
       let nextImgIndex = parseInt(currentImgIndex)+1;
       if (nextImgIndex==16) nextImgIndex=0;
+      if (nextImgIndex==-1) nextImgIndex=15;
       return smallImgList[nextImgIndex];
 }
 
@@ -98,3 +97,36 @@ function changeBigImg(smallImg)
       smallImg.classList.add("selectedImg");
       bigImg.dataset.index=smallImg.dataset.index; 
 }
+
+function goToNextImg()
+{
+      let currentImgIndex = bigImg.dataset.index;
+      let nextSmallImg = getNextSmallImg(currentImgIndex); 
+      changeBigImg(nextSmallImg);
+}
+
+function goToPrevImg()
+{
+      let currentImgIndex = bigImg.dataset.index-2;
+      let nextSmallImg = getNextSmallImg(currentImgIndex); 
+      changeBigImg(nextSmallImg);
+}
+
+const nextButton = document.querySelector(".nextButton");
+const prevButton = document.querySelector(".prevButton");
+
+nextButton.addEventListener
+(
+      "click" , function(event)
+      {
+            goToNextImg();
+      }
+)
+
+prevButton.addEventListener
+(
+      "click" , function(event)
+      {
+            goToPrevImg();
+      }
+)
