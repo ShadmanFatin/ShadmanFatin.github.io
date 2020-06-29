@@ -32,6 +32,7 @@ function removeSelectedBorder()
 {
       for (let i=0; i<=smallImgList.length-1; i++)
       {
+            if ( smallImgList[i].classList.contains("selectedImg") )
             smallImgList[i].classList.remove("selectedImg");
       }
 }
