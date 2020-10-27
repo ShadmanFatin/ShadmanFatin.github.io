@@ -44,7 +44,20 @@
 		width: auto; 
 		padding: 10px 18px; 
 		background-color: #f44336; 
+		margin-left: 10px;
 	} 
+
+	.createAccountBtn
+	{
+		width: auto; 
+		padding: 10px 18px; 
+		background-color: blue; 
+	}
+
+	.createAccountBtn:hover
+	{
+		background-color: rgb(0, 110, 255);
+	}
 	
 	/*centre the display image inside the container*/ 
 	.imgcontainer { 
@@ -71,7 +84,8 @@
 	/*set the forgot password text*/ 
 	span.psw { 
 		float: right; 
-		padding-top: 16px; 
+		padding-bottom: 16px; 
+		font-size: 12px;
 	} 
 	
 	/*set the Modal background*/ 
@@ -147,13 +161,20 @@
 			transform: scale(1) 
 		} 
 	} 
+
+	@media screen and (min-width: 500px) 
+	{
+		span.psw
+		{
+			font-size: 15px;
+		}
+	} 
 	
 	@media screen and (max-width: 300px) { 
 		span.psw { 
 			display: block; 
-			float: none; 
 		} 
-		.cancelbtn { 
+		.cancelbtn , .createAccountBtn { 
 			width: 100%; 
 		} 
 	} 
@@ -163,6 +184,7 @@
 		/* border: 2px solid red; */
 		text-align: center;
 		text-decoration: underline;
+		margin: 40px 0 30px 0;
 	}
 
 	.buttonsContainer
@@ -173,18 +195,32 @@
 		margin-top: 1rem;
 		flex-direction: column;
 	}
+
+	.formHeaderBox
+	{
+		text-align: center;
+		display: block;
+	}
+
+	.formHeader
+	{
+		text-decoration: underline;
+		font-family: cursive;
+	}
 </style> 
 
 <body> 
 
-	<h2 class="header">Login Page</h2> 
+	<h2 class="header">TheRateIt.com</h2> 
 	<!--Step 1 : Adding HTML-->
 
 	<div class="buttonsContainer">
-		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Create Account</button> 
 		<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button> 
+		<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Create Account</button> 
 	</div>
 
+
+	<!-- login modal starts -->
 	<div id="id01" class="modal"> 
 
 		<form class="modal-content animate" action="/action_page.php">
@@ -193,23 +229,74 @@
 				<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span> 
 			</div>
 
+			<h2 class="formHeaderBox">
+				<div class="formHeader">Login</div> 
+			</h2>
+
 			<div class="container"> 
 				<label><b>Username</b></label> 
 				<input type="text" placeholder="Enter Username" name="uname" required> 
-<br><br>
+				<br><br>
+
 				<label><b>Password</b></label> 
 				<input type="password" placeholder="Enter Password" name="psw" required> 
-<br><br>
+				<span class="psw">Forgot <a href="#">password</a>?</span> 
+				<br><br>
+
 				<button type="submit">Login</button> 
 				<input type="checkbox" checked="checked"> Remember me 
 			</div> 
-<br><br>
+				<br><br>
+				
 			<div class="container" style="background-color:#f1f1f1"> 
+				<button type="button" onclick="document.getElementById('id02').style.display='block'; document.getElementById('id01').style.display='none';" class="createAccountBtn">Create Account</button> 
 				<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> 
-				<span class="psw">Forgot <a href="#">password?</a></span> 
+				
 			</div> 
 		</form> 
 	</div> 
+	<!-- login modal ends -->
+
+
+	<!-- create account modal starts -->
+	<div id="id02" class="modal"> 
+
+		<form class="modal-content animate" action="/action_page.php">
+
+			<div class="closeContainer">
+				<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">×</span> 
+			</div>
+
+			<h2 class="formHeaderBox">
+				<div class="formHeader">Create Account</div> 
+			</h2>
+
+			<div class="container"> 
+				<label><b>Username</b></label> 
+				<input onclick="alert('Enter brac g-suite email address')" type="text" placeholder="Enter Username" name="uname" required> 
+				<br>
+
+				<label><b>Password</b></label> 
+				<input type="password" placeholder="Enter Password" name="psw" required> 
+				<br>
+
+				<label><b>Confirm Password</b></label> 
+				<input type="password" placeholder="Confirm Password" name="psw" required>  
+				<br>
+
+				<button type="submit">Create Account</button> 
+				<input type="checkbox" checked="checked"> Remember me 
+			</div> 
+				<br>
+				
+			<div class="container" style="background-color:#f1f1f1"> 
+				<button type="button" onclick="document.getElementById('id02').style.display='none'; document.getElementById('id01').style.display='block';" class="createAccountBtn">Login</button> 
+				<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button> 
+				
+			</div> 
+		</form> 
+	</div> 
+	<!-- create account modal ends -->
 
 	<script> 
 		var modal = document.getElementById('id01'); 
