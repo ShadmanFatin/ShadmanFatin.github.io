@@ -18,8 +18,8 @@
 	} 
 	/*assign full width inputs*/ 
 	
-	input[type=text], 
-	input[type=password] { 
+	input[type=text] , input[type=password] , input[type=email]
+	{ 
 		width: 100%; 
 		padding: 10px 18px; 
 		margin: 8px 0; 
@@ -81,9 +81,9 @@
 	} 
 	/*set the forgot password text*/ 
 	
-	span.psw { 
+	span.psw 
+	{ 
 		float: right; 
-		padding-top: 16px; 
 	} 
 
 	/*set styles for span and cancel button on small screens*/ 
@@ -108,7 +108,7 @@
 			font-size: 20px;
 		} 
 
-		input[type=text] , input[type=password] 
+		input[type=text] , input[type=password] , input[typr=email]
 		{ 
 		padding: 12px 20px; 
 		font-size: 19px;
@@ -127,37 +127,79 @@
 		border-radius: 10px;
 	}
 
+	button[type=submit]
+	{
+		margin-top: 18px; 
+	}
+
 </style> 
 
 
 
 <body> 
-	<h2>Login Form</h2> 
-	<!--Step 1 : Adding HTML-->
-	<form action="/action_page.php"> 
-		<div class="imgcontainer"> 
-			<h2 class="websiteName">TheRateIt.com</h2>
-		</div> 
+	<!-- loginForm starts####################### -->
+	<div class="loginForm">
+		<h2>Login Form</h2> 
+		<form action="/action_page.php"> 
 
-		<div class="container"> 
-			<label><b>Username</b></label> 
-			<input type="text" placeholder="Enter Username" name="uname" required> 
+			<div class="imgcontainer"> 
+				<h2 class="websiteName">TheRateIt.com</h2>
+			</div> 
 
-			<label><b>Password</b></label> 
-			<input type="password" placeholder="Enter Password" name="psw" required> 
+			<div class="container"> 
+				<label><b>G-suite email address OR Username</b></label> 
+				<input type="text" placeholder="Enter email address OR username" name="unameOrEmail" required> 
 
-			<button type="submit">Login</button> 
-			<input type="checkbox" checked="checked"> Remember me 
-		</div> 
+				<label><b>Password</b></label> 
+				<input type="password" placeholder="Enter password" name="psw" required> 
 
-		<div class="ashBox container" style="background-color:#f1f1f1"> 
-			<button type="button" class="cancelbtn">Cancel</button> 
-			<span class="psw">Forgot <a href="#">password</a>?</span> 
-		</div> 
+				<span class="psw">Forgot <a href="#">password</a>?</span> 
 
-	</form> 
+				<button type="submit">Login</button>
 
-	<p>Don't have an account? <a href="#">Create Account</a></p>
+				<input type="checkbox" checked="checked"> Remember me 
+			</div> 
+
+		</form> 
+
+		<p>Don't have an account? <a href="#" class="showCreateAccountForm">Create Account</a></p>
+
+		</div>
+		<!-- loginForm ends####################### -->
+
+
+
+		<!-- creareAccount form starts##################### -->
+		<div class="createAccountForm" style="display: none;">
+			<h2>Create Account</h2> 
+			<form action="/action_page.php"> 
+				<div class="imgcontainer"> 
+					<h2 class="websiteName">TheRateIt.com</h2>
+				</div> 
+	
+				<div class="container"> 
+					<label><b>G-suite email address</b></label> 
+					<input type="email" placeholder="Enter email address" name="email" required> 
+	
+					<label><b>Username</b></label> 
+					<input type="text" placeholder="Enter username" name="uname" required> 
+
+					<label><b>Password</b></label> 
+					<input type="password" placeholder="Enter password" name="psw" required> 
+	
+					<button type="submit">Create Account</button> 
+
+					<input type="checkbox" checked="checked"> Remember me 
+				</div> 
+
+			</form> 
+	
+			<p>Already have an account? <a href="#" class="showLoginForm">Login</a></p>
+	
+		</div>
+		<!-- createAccount form ends##################### -->
+
+	<script src="./index.js"></script>
 </body> 
 
 
