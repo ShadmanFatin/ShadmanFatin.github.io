@@ -1,0 +1,11 @@
+.blackFace , .whiteFace
+{
+    position: absolute;
+    font-size: 4rem;
+    /* border: 1px solid red; */
+}
+
+button
+{
+    font-size: 2rem;
+}
