@@ -1,0 +1,95 @@
+.b
+{
+      border: 2px solid red;
+}
+
+/* .card:hover
+{
+      outline: 2px solid blue;
+      background-color: rgb(226, 235, 253);
+      cursor: pointer;
+} */
+
+.card 
+{
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: #fff;
+      background-clip: border-box;
+      border: 1px solid rgba(0, 0, 0, 0.125);
+      border-radius: 0.25rem;
+      /* min-height: 130px; */
+}
+
+.filter-dropdown-menu
+{
+      overflow-y: scroll;
+      max-height: 315px;
+}
+
+/* .dropdown-item:last-child
+{
+      border-bottom: 15px solid blue;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+} */
+
+.filter-dropdown-item
+{
+      min-width: 200px;
+      cursor: pointer;
+}
+
+
+/* if screen is smaller than xs */
+@media only screen and (max-width: 576px) 
+{
+      .card 
+      {
+            margin: 5px 0;
+      }
+
+      .card-body
+      {
+            justify-content: space-between !important;
+            /* align-items: center; */
+            padding: 20px 15px 13px 15px !important;
+            margin: 5px;
+      }
+
+      .myCardText
+      {
+            /* font-size: 1.3rem; */
+            /* margin-left: 12px; */
+      }
+      
+      .myCardRating
+      {
+            font-size: 0.9rem;
+            margin-right: 12px;
+      }
+
+      .cardBox
+      {
+            padding-left: 0;
+            padding-right: 0;
+      }
+}
+
+
+/* if screen is larger than xs */
+@media only screen and (min-width:  576px)
+{
+      .myCardRating
+      {
+            font-size: 1rem;
+            position: absolute;
+            bottom: 0;
+            right: 4px;
+      }
+}
